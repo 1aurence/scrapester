@@ -1,7 +1,7 @@
 # scrapester
 
 ### What is scrapester?
-Scrapester is an API that gathers data on any given webpage in a flexible manner depending on what you specifiy in your request. For example, say you want to gather all images from a specific subreddit in a certain time frame, with Scrapester you can do so and your images will be saved to an s3 bucket for later access or sharing. Any request made has the optional ability to be saved.  <hr />
+Scrapester is an API that gathers data on any given webpage in a flexible manner depending on what you specifiy in your request. For example, say you want to gather all images from a specific page and filter which ones are saved, with Scrapester you can do so and your images will be saved to an s3 bucket for later access or sharing. Any request made has the optional ability to be saved.  <hr />
 Scrapester has just been started so a lot of these features are not available yet, but I will list the features below that you can expect to see.
  
 ### Features
