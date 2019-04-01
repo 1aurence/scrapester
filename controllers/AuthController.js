@@ -16,13 +16,19 @@ module.exports = {
       res.status(500).send(error.message);
     }
   },
-  async getToken(req, res) {
-    const user = {
-      id: 1,
-      username: "test"
-    };
-    jwt.sign(user, keys.JWT_SECRET, (err, token) => {
-      res.json({ token });
-    });
-  }
+  async login(req, res) {
+    try {
+      const { username, password } = req.body;
+      const user = await User.findOne({ username });
+      let authUser = await bcrypt.compare(password, user.password);
+      if (authUser) {
+        jwt.sign(JSON.stringify(user), keys.JWT_SECRET, (err, token) => {
+          res.json({ token });
+        });
+      }
+    } catch (error) {
+      res.status(500).send(error.message);
+    }
+  },
 };
+

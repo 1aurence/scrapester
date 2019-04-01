@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 
-mongoose.connect(keys.DB_URI, { useNewUrlParser: true }, err => {
+mongoose.set("useCreateIndex", true);
+mongoose.set("useNewUrlParser", true);
+
+mongoose.connect(keys.DB_URI, err => {
   if (err) {
     return console.log(err);
   }
-  console.log('Connected to MongoDB')
+  console.log("Connected to MongoDB");
 });

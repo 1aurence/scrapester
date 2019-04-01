@@ -3,6 +3,6 @@ const api = express.Router();
 const AuthController = require("../controllers/AuthController");
 
 api.post("/register", AuthController.register);
-api.get("/token", AuthController.getToken);
+api.post("/login", AuthController.login);
 
 module.exports = api;
