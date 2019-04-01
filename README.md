@@ -7,4 +7,4 @@ Scrapester has just been started so a lot of these features are not available ye
 ### Features
 1. Save any result to remote s3 bucket for later access and sharing
 2. Gather dynamic information on any webpage with optional built in analytics to add to your query result
-3. 500 free requests per day with an optional save (saved requests will expire and be archived, but you will be able to access and restore them if you purchase a subscription)
+3. 500 free requests per day with an optional save (saved requests will expire and be archived in 15 days, but you will be able to access and restore them if you purchase a subscription)
