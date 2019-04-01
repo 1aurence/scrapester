@@ -6,7 +6,7 @@ module.exports = {
     res.send(request);
   },
   async screenshot(req, res) {
-    let request = await Requests.screenshotPage();
+    await Requests.screenshotPage();
     res.send("Screenshot has been saved!");
   }
 };
