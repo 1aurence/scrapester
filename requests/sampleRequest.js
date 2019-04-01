@@ -17,13 +17,18 @@ class Requests {
     return page;
   }
 
-  static async getTitle(url) {
+  static async getElementsText(url, element) {
     let page = await this.loadPage(url);
     let content = await page.content();
     let $ = cheerio.load(content);
-    const title = await $("title").text();
+    let data = [];
+    const title = await $(element).each(function() {
+      data.push($(this).text());
+      console.log($(this).text());
+    });
     await closeBrowser();
-    return title;
+    data.forEach(d => console.log(d));
+    return data;
   }
 
   static async screenshotPage(url) {

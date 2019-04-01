@@ -3,13 +3,18 @@ const keys = require("../config/keys");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const mongoose = require("mongoose");
 
 module.exports = {
   async register(req, res) {
     try {
       const { username, password } = req.body;
       const hash = await bcrypt.hash(password, saltRounds);
-      const user = new User({ username, password: hash });
+      const user = new User({
+        _id: new mongoose.Types.ObjectId(),
+        username,
+        password: hash
+      });
       const saveUser = await user.save();
       res.send(saveUser);
     } catch (error) {
