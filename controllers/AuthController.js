@@ -20,15 +20,20 @@ module.exports = {
     try {
       const { username, password } = req.body;
       const user = await User.findOne({ username });
-      let authUser = await bcrypt.compare(password, user.password);
-      if (authUser) {
+      const authorizedUser = await bcrypt.compare(password, user.password);
+      console.log(authorizedUser);
+      if (authorizedUser) {
         jwt.sign(JSON.stringify(user), keys.JWT_SECRET, (err, token) => {
+          if (err) {
+            res.status(500);
+          }
           res.json({ token });
         });
+      } else {
+        res.status(403).send({ error: "Authorization failed" });
       }
     } catch (error) {
       res.status(500).send(error.message);
     }
-  },
+  }
 };
-
