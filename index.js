@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-require("./db");
 const bodyParser = require("body-parser");
 const generalRoutes = require("./routes/general");
 const authRoutes = require("./routes/auth");
 
+require("./db");
 app.use(cors());
 app.use(bodyParser.json());
 require("./requests/sampleRequest");

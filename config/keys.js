@@ -1,4 +1,6 @@
-module.exports = {
-  JWT_SECRET: "shhhhhhhhhh",
-  DB_URI: `mongodb://admin:rootroot11@ds211635.mlab.com:11635/scrapester`
-};
+if (process.env.NODE_ENV === "production") {
+  module.exports = require('./prod')
+} else {
+  module.exports = require('./dev')
+}
+
