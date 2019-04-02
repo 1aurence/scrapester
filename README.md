@@ -36,4 +36,4 @@ Database wont show locally until you insert a document, this is fine, it will au
 * Get screenshot of a specified web-page
     *  GET http://localhost:3000/api/screenshot/&url=https://youtube.com&filename="myfile"&apiKey=YOUR_API_KEY (this only saves in local directory at the moment, but will save to s3 after fixed)
 * Get all elements text by class name
-    *  GET http://localhost:3000/api/class/&url=https://youtube.com&class="example-class"apiKey=YOUR_API_KEY
+    *  GET http://localhost:3000/api/class/&url=https://youtube.com&class="example-class"&apiKey=YOUR_API_KEY
