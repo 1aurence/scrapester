@@ -14,7 +14,7 @@ Scrapester has just been started so a lot of these features are not available ye
 
 Make sure you have MongoDB installed locally
 1) Start MongoDB client
-```
-sudo service mongod start
-
-```
+```sudo service mongod start```
+2) Create local database from Mongo shell
+``` use scrapester ```  
+3) CD into project directory and run ```npm run dev```
