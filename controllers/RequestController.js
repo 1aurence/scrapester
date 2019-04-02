@@ -6,14 +6,14 @@ const queryString = require("query-string");
 
 module.exports = {
   async getText(req, res) {
+    // Grab request info from queryString
     let url = queryString.parse(req.url).url;
     let element = queryString.parse(req.url).element;
     let userId = queryString.parse(req.url).userId;
-
     try {
       let request = await Requests.getElementsText(url, element);
       if (userId) {
-        // If user provides optional user id to save, then create new request and save it
+        // If user provides optional user id, then create new request and save it
         let newRequest = new Request({
           request: {
             url,
