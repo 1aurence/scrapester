@@ -15,6 +15,10 @@ Scrapester has just been started so a lot of these features are not available ye
 Make sure you have MongoDB installed locally, <a href="https://docs.mongodb.com/manual/installation/">here</a> is the link to the docs for installation
 1) Start MongoDB client
 ```sudo service mongod start```
-2) Create local database from Mongo shell
+2) Open Mongo shell
+```mongo```
+3) Create local database from Mongo shell
 ``` use scrapester ```  
-3) CD into project directory and run ```npm run dev```
+4) CD into project directory and run ```npm run dev```
+
+Database wont show locally until you insert a document, this is fine, it will automatically populate once you make a post request. I recommend using Postman testing.
