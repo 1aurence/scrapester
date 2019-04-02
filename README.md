@@ -12,7 +12,7 @@ Scrapester has just been started so a lot of these features are not available ye
 
 ### Setting up your dev environment
 
-Make sure you have MongoDB installed locally
+Make sure you have MongoDB installed locally, <a href="https://docs.mongodb.com/manual/installation/">here</a> is the link to the docs for installation
 1) Start MongoDB client
 ```sudo service mongod start```
 2) Create local database from Mongo shell
