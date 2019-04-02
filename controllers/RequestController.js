@@ -1,7 +1,5 @@
-const Requests = require("../requests/generalRequests");
+const RequestTypes = require("../requests/generalRequests");
 const Request = require("../models/request");
-const mongoose = require("mongoose");
-const { upload } = require("../image-config/index");
 const queryString = require("query-string");
 
 module.exports = {
@@ -11,7 +9,7 @@ module.exports = {
     let element = queryString.parse(req.url).element;
     let userId = queryString.parse(req.url).userId;
     try {
-      let request = await Requests.getElementsText(url, element);
+      let request = await RequestTypes.getElementsText(url, element);
       if (userId) {
         // If user provides optional user id, then create new request and save it
         let newRequest = new Request({
@@ -39,7 +37,7 @@ module.exports = {
     let url = queryString.parse(req.url).url;
     let filename = queryString.parse(req.url).filename;
     try {
-      await Requests.screenshotPage(url, filename);
+      await RequestTypes.screenshotPage(url, filename);
       res.send("Screenshot has been saved");
     } catch (error) {
       res.status(500).send(error.message);
