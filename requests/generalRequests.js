@@ -20,21 +20,27 @@ class Requests {
   static async getElementsText(url, element) {
     let page = await this.loadPage(url);
     let content = await page.content();
-    let $ = cheerio.load(content);
+    let $ = cheerio.load(content, {
+      withDomLvl1: true,
+      normalizeWhitespace: true,
+      xmlMode: true,
+      decodeEntities: true
+    });
     let data = [];
-    const title = await $(element).each(function() {
+    const pageQuery = await $(element).each(function() {
       data.push($(this).text());
-      console.log($(this).text());
     });
     await closeBrowser();
-    data.forEach(d => console.log(d));
     return data;
   }
 
-  static async screenshotPage(url) {
+  static async screenshotPage(url, filename) {
     let page = await this.loadPage(url);
-    await page.screenshot({ path: __dirname + "/screenshots/test.png" });
+    let screenshot = await page.screenshot({
+      path: __dirname + `/screenshots/${filename}.jpeg`
+    });
     await closeBrowser();
+    return screenshot;
   }
 }
 module.exports = Requests;

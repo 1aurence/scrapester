@@ -1,9 +1,10 @@
 const express = require("express");
 const api = express.Router();
-const GeneralController = require("../controllers/GeneralController");
+const RequestController = require("../controllers/RequestController");
 const { verifyToken } = require("../middleware/verifyToken");
 
-api.get("/title/:id?", verifyToken, GeneralController.title);
-api.get("/screenshot", verifyToken, GeneralController.screenshot);
+api.get("/text/?*", verifyToken, RequestController.getText);
+api.get("/screenshot/?*", verifyToken, RequestController.screenshot);
+api.get("/saved-requests/:id", RequestController.savedRequests);
 
 module.exports = api;

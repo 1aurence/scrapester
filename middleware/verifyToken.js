@@ -1,15 +1,22 @@
+const jwt = require("jsonwebtoken");
+const keys = require("../config/keys");
+const queryString = require("query-string");
+
 module.exports = {
-  verifyToken(req, res, next) {
-    // Check if JWT token exists in header
-    const bearerToken = req.headers["authorization"];
-    if (bearerToken) {
-      // Add token to req object if token exists
-      req.token = bearerToken;
-      next();
-    } else {
-      res
-        .status(403)
-        .json({ error: "You must be authorized to access this endpoint" });
+  async verifyToken(req, res, next) {
+    try {
+      // Check if JWT token exists in header
+      const bearerToken = queryString.parse(req.url).apiKey
+      if (bearerToken) {
+        // Add token to req object if token exists
+        req.token = bearerToken;
+        let verifyToken = await jwt.verify(req.token, keys.JWT_SECRET);
+        if (verifyToken) {
+          next();
+        }
+      }
+    } catch (error) {
+      res.status(403).send(error.message);
     }
   }
 };
