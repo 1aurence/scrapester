@@ -1,7 +1,7 @@
 # scrapester
 
 ### What is scrapester?
-Scrapester is an API that gathers data on any given webpage in a flexible manner depending on what you specifiy in your request. For example, say you want to gather all images from a specific page and filter which ones are saved, with Scrapester you can do so and your images will be saved to an s3 bucket for later access or sharing. Any request made has the optional ability to be saved.  <hr />
+Scrapester is an API that gathers data on any given webpage in a flexible manner depending on what you specifiy in your request. For example, say you want to gather all images from a specific page and filter which ones are saved, with Scrapester you can do so and your images will be saved to the cloud for later access or sharing. Any request made has the optional ability to be saved.  <hr />
 Scrapester has just been started so a lot of these features are not available yet, but I will list the features below that you can expect to see.
  
 ### Features
@@ -34,6 +34,6 @@ Database wont show locally until you insert a document, this is fine, it will au
 * Get text contents associated with every specified element on the page (i.e, text from every h2 element)
     *  GET http://localhost:3000/api/text/&element=h2&url=https://youtube.com&apiKey=YOUR_API_KEY (optional param to save result: &userId=YOUR_USER_ID)
 * Get screenshot of a specified web-page
-    *  GET http://localhost:3000/api/screenshot/&url=https://youtube.com&filename="myfile"&apiKey=YOUR_API_KEY (this only saves in local directory at the moment, but will save to s3 after fixed)
+    *  GET http://localhost:3000/api/screenshot/&url=https://youtube.com&filename="myfile"&apiKey=YOUR_API_KEY
 * Get all elements text by class name
     *  GET http://localhost:3000/api/class/&url=https://youtube.com&class="example-class"&apiKey=YOUR_API_KEY
