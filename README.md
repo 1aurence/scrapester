@@ -19,7 +19,7 @@ Make sure you have MongoDB installed locally, <a href="https://docs.mongodb.com/
 ```mongo```
 3) Create local database from Mongo shell
 ``` use scrapester ```  
-4) CD into project directory and run ```npm install``` then ```npm run dev``` (make sure you have Nodemon installed)
+4) CD into project directory and run ```npm install && npm run dev``` (make sure you have Nodemon installed)
 
 Database wont show locally until you insert a document, this is fine, it will automatically populate once you make a post request. I recommend using Postman for testing.
 <hr />
