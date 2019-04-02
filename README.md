@@ -22,3 +22,8 @@ Make sure you have MongoDB installed locally, <a href="https://docs.mongodb.com/
 4) CD into project directory and run ```npm run dev``` (make sure you have Nodemon installed)
 
 Database wont show locally until you insert a document, this is fine, it will automatically populate once you make a post request. I recommend using Postman for testing.
+<hr />
+
+### Using Scrapester (development)
+* Get text contents associated with every specified element on the page (i.e, text from every h2 element)
+    *  GET http://localhost:3000/api/text/&element=h2&url=https://youtube.com&apiKey=YOUR_API_KEY (optional params to save result: &userId=YOUR_USER_ID)
