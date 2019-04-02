@@ -27,20 +27,30 @@ class Requests {
       decodeEntities: true
     });
     let data = [];
-    const pageQuery = await $(element).each(function() {
+    const pageQuery = await $(element).each(function () {
       data.push($(this).text());
     });
     await closeBrowser();
     return data;
   }
 
-  static async screenshotPage(url, filename) {
-    let page = await this.loadPage(url);
-    let screenshot = await page.screenshot({
-      path: __dirname + `/screenshots/${filename}.jpeg`
-    });
-    await closeBrowser();
-    return screenshot;
+  static async screenshot(url, filename) {
+    try {
+
+      let page = await this.loadPage(url);
+      let screenshot = await page.screenshot({
+        omitBackground: true,
+        encoding: 'binary',
+      });
+      await closeBrowser();
+      return screenshot;
+    } catch (error) {
+      await closeBrowser()
+      throw new Error(error.message)
+
+    }
   }
+
+
 }
 module.exports = Requests;
