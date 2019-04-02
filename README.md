@@ -25,12 +25,12 @@ Database wont show locally until you insert a document, this is fine, it will au
 <hr />
 
 ### Using Scrapester (development)
-#### Getting API key
+#### Getting API key:
 1) Register using this endpoint ```http://localhost:3000/api/auth/register``` providing username and password in request body
 2) Login using this endpoing ```http://localhost:3000/api/auth/login``` providing username and password in request body
 3) Copy the returned token to use as API key 
 
-#### Endpoints
+#### Endpoints:
 * Get text contents associated with every specified element on the page (i.e, text from every h2 element)
     *  GET http://localhost:3000/api/text/&element=h2&url=https://youtube.com&apiKey=YOUR_API_KEY (optional param to save result: &userId=YOUR_USER_ID)
 * Get screenshot of a specified web-page
