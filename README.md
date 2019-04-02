@@ -26,6 +26,6 @@ Database wont show locally until you insert a document, this is fine, it will au
 
 ### Using Scrapester (development)
 * Get text contents associated with every specified element on the page (i.e, text from every h2 element)
-    *  GET http://localhost:3000/api/text/&element=h2&url=https://youtube.com&apiKey=YOUR_API_KEY (optional params to save result: &userId=YOUR_USER_ID)
+    *  GET http://localhost:3000/api/text/&element=h2&url=https://youtube.com&apiKey=YOUR_API_KEY (optional param to save result: &userId=YOUR_USER_ID)
 * Get screenshot of a specified web-page
     *  GET http://localhost:3000/api/screenshot/&url=https://youtube.com&filename="myfile"&apiKey=YOUR_API_KEY (this only saves in local directory at the moment, but will save to s3 after fixed)
