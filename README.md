@@ -21,4 +21,4 @@ Make sure you have MongoDB installed locally, <a href="https://docs.mongodb.com/
 ``` use scrapester ```  
 4) CD into project directory and run ```npm run dev```
 
-Database wont show locally until you insert a document, this is fine, it will automatically populate once you make a post request. I recommend using Postman testing.
+Database wont show locally until you insert a document, this is fine, it will automatically populate once you make a post request. I recommend using Postman for testing.
