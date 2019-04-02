@@ -31,7 +31,7 @@ Database wont show locally until you insert a document, this is fine, it will au
     *  GET http://localhost:3000/api/screenshot/&url=https://youtube.com&filename="myfile"&apiKey=YOUR_API_KEY (this only saves in local directory at the moment, but will save to s3 after fixed)
     
 #### Getting API key
-1) Register using this endpoint ```http://localhost:3000/api/auth/register```
-2) Login using this endpoing ```http://localhost:3000/api/auth/login```
+1) Register using this endpoint ```http://localhost:3000/api/auth/register``` providing username and password in request body
+2) Login using this endpoing ```http://localhost:3000/api/auth/login``` prodiving username and password in request body
 3) Copy the returned token to use as API key 
 
